@@ -1,14 +1,14 @@
 <template>
     <div class="container" style="max-width: 600px">
       <!-- Heading -->
-      <h2 class="text-center mt-5">My Vue Todo App</h2>
-  
+      <h2 class="text-center mt-5">Todo App</h2>
+      
       <!-- Input -->
       <div class="d-flex mt-5">
         <input
           type="text"
           v-model="task"
-          placeholder="Enter task"
+          placeholder="Enter todo task"
           class="w-100 form-control"
         />
         <button class="btn btn-warning rounded-0" @click="submitTask">
@@ -38,7 +38,7 @@
                 class="pointer noselect"
                 @click="changeStatus(index)"
                 :class="{
-                  'text-danger': task.status === 'to-do',
+                  'text-danger': task.status === 'todo',
                   'text-success': task.status === 'finished',
                   'text-warning': task.status === 'in-progress',
                 }"
@@ -73,9 +73,9 @@
       return {
         task: "",
         editedTask: null,
-        statuses: ["to-do", "in-progress", "finished"],
+        statuses: ["todo", "in-progress", "finished"],
   
-        /* Status could be: 'to-do' / 'in-progress' / 'finished' */
+        /* Status could be: 'todo' / 'in-progress' / 'finished' */
         tasks: [
           {
             name: "First try Vue.",
@@ -87,7 +87,7 @@
           },
           {
             name:"Later...",
-            status: "to-do",
+            status: "todo",
           },
         ],
       };
